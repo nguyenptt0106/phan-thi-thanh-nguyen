@@ -1,0 +1,181 @@
+@keyframes pretty {
+  0% {
+    background-position: right;
+  }
+  50% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url('~/public/images/bg.png');
+  background-color: rgb(6, 39, 99);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 56%;
+}
+
+.wrapper {
+  padding-top: 100px;
+
+  .title {
+    text-align: center;
+    padding-bottom: 30px;
+
+    .description {
+      color: #FFFFFF;
+    }
+
+    .bold {
+      font-size: 38px;
+      color: #191335;
+      background-image: linear-gradient(to right, #009fff, #00c5ff, #00dfff, #00ffdf, #7dfffc, #009fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% 100%;
+      background-position: top left;
+      animation: pretty 3s ease-in-out infinite;
+      transition: all 1s ease-in-out;
+
+      &:hover {
+        background-position: top left 100%;
+      }
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .currencyExchange {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    .toggleCurrency {
+      display: flex;
+      justify-content: end;
+      padding: 20px 55px 20px 20px;
+
+      .icon {
+        cursor: pointer;
+        color: rgb(15, 117, 252);
+      }
+    }
+
+    .section {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+
+      .input {
+        width: 62%;
+        background: none;
+        border: none;
+        padding: 15px 0 15px 15px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      .result {
+        width: 100%;
+        height: 60px;
+        margin-right: 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 18px;
+        background-color: rgba(198, 213, 234, 0.5);
+        outline: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          background-color: rgba(198, 213, 234, 0.7);
+        }
+
+        .number {
+          width: 80%;
+          font-size: 18px;
+          text-align: right;
+        }
+      }
+    }
+
+    .submit {
+      text-align: center;
+
+      .btn {
+        padding: 13px 50px;
+        font-size: 18px;
+        background-color: rgb(15, 117, 252);
+        transition: background-color linear 200ms;
+        margin-top: 20px;
+        color: #FFFFFF;
+        outline: none;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        cursor: pointer;
+
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    background-position: 96% 95%;
+  }
+
+  .wrapper {
+    .title {
+      .bold {
+        height: auto;
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .currencyExchange {
+      padding: 40px 10px;
+
+      .icons {
+        padding-right: 23%;
+      }
+
+      .section {
+        .result {
+          padding: 0 10px;
+
+          .number {
+            width: 110px;
+          }
+        }
+      }
+    }
+  }
+}
